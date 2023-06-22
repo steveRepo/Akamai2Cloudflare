@@ -1,0 +1,2012 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Children</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden { display: none; }
+        .scrollable { overflow-x: auto; white-space: nowrap; }
+        .indent-0 { padding-left: 0; }
+        .indent-1 { padding-left: 10px; }
+        .indent-2 { padding-left: 20px; }
+        .indent-3 { padding-left: 30px; }
+        .indent-4 { padding-left: 40px; }
+        .indent-5 { padding-left: 50px; }
+        pre {
+        white-space: pre-wrap;       /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10 px-4">
+        <h1 class="text-2xl font-bold mb-4">Akamai Property Manager Rules:</h1>
+        
+        <div class="flex h-screen">
+            <div class="w-1/4 bg-white border-r border-gray-300 overflow-auto sticky top-0">
+                <nav class="p-4">
+        
+                    <a id="nav-item-0" href="javascript:void(0)" onclick="displayRuleChild(0)" class="indent-0 block py-2 px-4 hover:bg-gray-200">default</a>
+            
+                    <a id="nav-item-1" href="javascript:void(0)" onclick="displayRuleChild(1)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Augment insights</a>
+            
+                    <a id="nav-item-2" href="javascript:void(0)" onclick="displayRuleChild(2)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Traffic reporting</a>
+            
+                    <a id="nav-item-3" href="javascript:void(0)" onclick="displayRuleChild(3)" class="indent-2 block py-2 px-4 hover:bg-gray-200">mPulse RUM</a>
+            
+                    <a id="nav-item-4" href="javascript:void(0)" onclick="displayRuleChild(4)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Geolocation</a>
+            
+                    <a id="nav-item-5" href="javascript:void(0)" onclick="displayRuleChild(5)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Log delivery</a>
+            
+                    <a id="nav-item-6" href="javascript:void(0)" onclick="displayRuleChild(6)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Accelerate Delivery</a>
+            
+                    <a id="nav-item-7" href="javascript:void(0)" onclick="displayRuleChild(7)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Origin connectivity</a>
+            
+                    <a id="nav-item-8" href="javascript:void(0)" onclick="displayRuleChild(8)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Protocol Optimizations</a>
+            
+                    <a id="nav-item-9" href="javascript:void(0)" onclick="displayRuleChild(9)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Prefetching</a>
+            
+                    <a id="nav-item-10" href="javascript:void(0)" onclick="displayRuleChild(10)" class="indent-3 block py-2 px-4 hover:bg-gray-200">Prefetching objects</a>
+            
+                    <a id="nav-item-11" href="javascript:void(0)" onclick="displayRuleChild(11)" class="indent-4 block py-2 px-4 hover:bg-gray-200">Bots</a>
+            
+                    <a id="nav-item-12" href="javascript:void(0)" onclick="displayRuleChild(12)" class="indent-3 block py-2 px-4 hover:bg-gray-200">Prefetchable objects</a>
+            
+                    <a id="nav-item-13" href="javascript:void(0)" onclick="displayRuleChild(13)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Offload origin</a>
+            
+                    <a id="nav-item-14" href="javascript:void(0)" onclick="displayRuleChild(14)" class="indent-2 block py-2 px-4 hover:bg-gray-200">CSS and JavaScript</a>
+            
+                    <a id="nav-item-15" href="javascript:void(0)" onclick="displayRuleChild(15)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Fonts</a>
+            
+                    <a id="nav-item-16" href="javascript:void(0)" onclick="displayRuleChild(16)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Images</a>
+            
+                    <a id="nav-item-17" href="javascript:void(0)" onclick="displayRuleChild(17)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Files</a>
+            
+                    <a id="nav-item-18" href="javascript:void(0)" onclick="displayRuleChild(18)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Other static objects</a>
+            
+                    <a id="nav-item-19" href="javascript:void(0)" onclick="displayRuleChild(19)" class="indent-2 block py-2 px-4 hover:bg-gray-200">HTML pages</a>
+            
+                    <a id="nav-item-20" href="javascript:void(0)" onclick="displayRuleChild(20)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Redirects</a>
+            
+                    <a id="nav-item-21" href="javascript:void(0)" onclick="displayRuleChild(21)" class="indent-2 block py-2 px-4 hover:bg-gray-200">POST responses</a>
+            
+                    <a id="nav-item-22" href="javascript:void(0)" onclick="displayRuleChild(22)" class="indent-2 block py-2 px-4 hover:bg-gray-200">GraphQL</a>
+            
+                    <a id="nav-item-23" href="javascript:void(0)" onclick="displayRuleChild(23)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Uncacheable objects</a>
+            
+                    <a id="nav-item-24" href="javascript:void(0)" onclick="displayRuleChild(24)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Strengthen security</a>
+            
+                    <a id="nav-item-25" href="javascript:void(0)" onclick="displayRuleChild(25)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Allowed methods</a>
+            
+                    <a id="nav-item-26" href="javascript:void(0)" onclick="displayRuleChild(26)" class="indent-3 block py-2 px-4 hover:bg-gray-200">POST</a>
+            
+                    <a id="nav-item-27" href="javascript:void(0)" onclick="displayRuleChild(27)" class="indent-3 block py-2 px-4 hover:bg-gray-200">OPTIONS</a>
+            
+                    <a id="nav-item-28" href="javascript:void(0)" onclick="displayRuleChild(28)" class="indent-3 block py-2 px-4 hover:bg-gray-200">PUT</a>
+            
+                    <a id="nav-item-29" href="javascript:void(0)" onclick="displayRuleChild(29)" class="indent-3 block py-2 px-4 hover:bg-gray-200">DELETE</a>
+            
+                    <a id="nav-item-30" href="javascript:void(0)" onclick="displayRuleChild(30)" class="indent-3 block py-2 px-4 hover:bg-gray-200">PATCH</a>
+            
+                    <a id="nav-item-31" href="javascript:void(0)" onclick="displayRuleChild(31)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Obfuscate debug info</a>
+            
+                    <a id="nav-item-32" href="javascript:void(0)" onclick="displayRuleChild(32)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Obfuscate backend info</a>
+            
+                    <a id="nav-item-33" href="javascript:void(0)" onclick="displayRuleChild(33)" class="indent-2 block py-2 px-4 hover:bg-gray-200">HSTS</a>
+            
+                    <a id="nav-item-34" href="javascript:void(0)" onclick="displayRuleChild(34)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Increase availability</a>
+            
+                    <a id="nav-item-35" href="javascript:void(0)" onclick="displayRuleChild(35)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Simulate failover</a>
+            
+                    <a id="nav-item-36" href="javascript:void(0)" onclick="displayRuleChild(36)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Site failover</a>
+            
+                    <a id="nav-item-37" href="javascript:void(0)" onclick="displayRuleChild(37)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Origin health</a>
+            
+                    <a id="nav-item-38" href="javascript:void(0)" onclick="displayRuleChild(38)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Minimize payload</a>
+            
+                    <a id="nav-item-39" href="javascript:void(0)" onclick="displayRuleChild(39)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Compressible objects</a>
+            
+                    <a id="nav-item-40" href="javascript:void(0)" onclick="displayRuleChild(40)" class="indent-1 block py-2 px-4 hover:bg-gray-200">Bot Caching</a>
+            
+                    <a id="nav-item-41" href="javascript:void(0)" onclick="displayRuleChild(41)" class="indent-2 block py-2 px-4 hover:bg-gray-200">Invalidation at 1 am</a>
+            
+                </nav>
+            </div>
+            <div class="w-3/4 p-4">
+                <div id="rule-child-container">
+        
+                    <div id="rule-child-0" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">default</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">origin:</h3>
+                                <pre>{
+  "name": "origin",
+  "options": {
+    "cacheKeyHostname": "REQUEST_HOST_HEADER",
+    "compress": true,
+    "enableTrueClientIp": true,
+    "forwardHostHeader": "REQUEST_HOST_HEADER",
+    "httpPort": 80,
+    "httpsPort": 443,
+    "originCertificate": "",
+    "originSni": true,
+    "originType": "CUSTOMER",
+    "ports": "",
+    "trueClientIpClientSetting": false,
+    "trueClientIpHeader": "True-Client-IP",
+    "verificationMode": "PLATFORM_SETTINGS",
+    "hostname": "origin.templeandwebster.com.au"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Specify the hostname and settings used to contact the origin once service begins. You can use your own origin, NetStorage, an Edge Load Balancing origin, or a SaaS dynamic origin. On Cloudflare: https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/, https://developers.cloudflare.com/rules/origin-rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-origin">https://techdocs.akamai.com/property-mgr/reference/latest-origin</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-1" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Augment insights</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-2" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Traffic reporting</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cpCode:</h3>
+                                <pre>{
+  "name": "cpCode",
+  "options": {
+    "value": {
+      "id": 1160712,
+      "description": "www.templeandwebster.com.au",
+      "products": [
+        "Site_Accel"
+      ],
+      "createdDate": 1614825764000,
+      "cpCodeLimits": {
+        "limit": 100,
+        "currentCapacity": 97,
+        "limitType": "global"
+      },
+      "name": "www.templeandwebster.com.au"
+    }
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>We can ignore this. This is Akamai's billing tracking functionality..</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cp-code">https://techdocs.akamai.com/property-mgr/reference/latest-cp-code</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-3" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">mPulse RUM</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">mPulse:</h3>
+                                <pre>{
+  "name": "mPulse",
+  "options": {
+    "apiKey": "",
+    "bufferSize": "",
+    "configOverride": "",
+    "enabled": false,
+    "loaderVersion": "V12",
+    "requirePci": false,
+    "titleOptional": ""
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Web Analytics
+
+https://developers.cloudflare.com/analytics/web-analytics/about
+
+(Akamai) Mpulse is a add-on feature on top of Ion (Cloudflare) No add-on required, web Analytics supports Adaptive Bit Rate (ABR).</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-m-pulse">https://techdocs.akamai.com/property-mgr/reference/latest-m-pulse</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-4" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Geolocation</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">edgeScape:</h3>
+                                <pre>{
+  "name": "edgeScape",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>EdgeScape allows you to customize content based on the end user's geographic location or connection speed. When enabled, the edge server sends a special X-Akamai-Edgescape header to the origin server encoding relevant details about the end-user key value pairs.  
+
+Snapshot of what is sent to origin with Edegscape: https://myakamai.force.com/customers/s/question/0D50f00005j1BErCAM/can-someone-update-the-edgescape-documentation?language=en_US and https://webtechsurvey.com/response-header/x-akamai-edgescape. Note sure there's an equivalent we have at CF but we have access to geo info: https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/ and can potentially generate rules based on this. Could perhaps consider mirage if looking at serving different images based on connection speed: https://developers.cloudflare.com/support/speed/optimization-delivery/configuring-cloudflare-mirage/. Managed transforms may also be useful: https://developers.cloudflare.com/rules/transform/managed-transforms/reference/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-edge-scape">https://techdocs.akamai.com/property-mgr/reference/latest-edge-scape</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: requestType
+    options: 
+      matchOperator: IS
+      value: CLIENT_REQ
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-5" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Log delivery</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">report:</h3>
+                                <pre>{
+  "name": "report",
+  "options": {
+    "logAcceptLanguage": false,
+    "logCookies": "OFF",
+    "logCustomLogField": false,
+    "logHost": false,
+    "logReferer": false,
+    "logUserAgent": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Select custom log fields on CF: https://developers.cloudflare.com/logs/reference/custom-fields/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-report">https://techdocs.akamai.com/property-mgr/reference/latest-report</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-6" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Accelerate Delivery</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-7" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Origin connectivity</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">dnsAsyncRefresh:</h3>
+                                <pre>{
+  "name": "dnsAsyncRefresh",
+  "options": {
+    "enabled": true,
+    "timeout": "1h"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-dns-async-refresh">https://techdocs.akamai.com/property-mgr/reference/latest-dns-async-refresh</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">timeout:</h3>
+                                <pre>{
+  "name": "timeout",
+  "options": {
+    "value": "5s"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-timeout">https://techdocs.akamai.com/property-mgr/reference/latest-timeout</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">readTimeout:</h3>
+                                <pre>{
+  "name": "readTimeout",
+  "options": {
+    "value": "120s"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-read-timeout">https://techdocs.akamai.com/property-mgr/reference/latest-read-timeout</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-8" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Protocol Optimizations</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">http2:</h3>
+                                <pre>{
+  "name": "http2",
+  "options": {
+    "enabled": ""
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>HTTP/2 and HTTP/3 accelerate page load. They are both free for all Cloudflare plans but require an SSL certificate at Cloudflareâs edge network. Configure HTTP/2 and HTTP/3 via the Cloudflare Network app. https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/ - https://developers.cloudflare.com/support/network/understanding-cloudflare-http2-and-http3-support/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-http2">https://techdocs.akamai.com/property-mgr/reference/latest-http2</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowTransferEncoding:</h3>
+                                <pre>{
+  "name": "allowTransferEncoding",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>From Akamai: https://techdocs.akamai.com/terraform/docs/ga-allow-transfer-encoding. Possibly some workers logic may be required here. We do offer this via tunnel however: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/local-management/arguments/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-transfer-encoding">https://techdocs.akamai.com/property-mgr/reference/latest-allow-transfer-encoding</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">sureRoute:</h3>
+                                <pre>{
+  "name": "sureRoute",
+  "options": {
+    "enableCustomKey": false,
+    "enabled": true,
+    "forceSslForward": false,
+    "raceStatTtl": "30m",
+    "srDownloadLinkTitle": "",
+    "testObjectUrl": "/akamai_sureroute_test_object.html",
+    "toHostStatus": "INCOMING_HH",
+    "type": "PERFORMANCE"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>SureRoute tests multiple routes between âAkamaiâ edge servers and your origin server to identify an optimal path for performance and establish alternative routes in cases of potential request failures. For CF equivalent we would be looking at Argo Smart Routing: https://www.cloudflare.com/products/argo-smart-routing/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-sure-route">https://techdocs.akamai.com/property-mgr/reference/latest-sure-route</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-9" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Prefetching</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-10" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Prefetching objects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">prefetch:</h3>
+                                <pre>{
+  "name": "prefetch",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Prefetch URLs: https://developers.cloudflare.com/fundamentals/speed/prefetch-urls/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-prefetch">https://techdocs.akamai.com/property-mgr/reference/latest-prefetch</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-11" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Bots</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">prefetch:</h3>
+                                <pre>{
+  "name": "prefetch",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Prefetch URLs: https://developers.cloudflare.com/fundamentals/speed/prefetch-urls/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-prefetch">https://techdocs.akamai.com/property-mgr/reference/latest-prefetch</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: userAgent
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      matchWildcard: true
+      values: 
+        *bot*
+        *crawl*
+        *spider*
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-12" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Prefetchable objects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">prefetchable:</h3>
+                                <pre>{
+  "name": "prefetchable",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Allow matching objects to prefetch into the edge cache as the parent page that links to them loads, rather than waiting for a direct request. This behavior applies depending on the rule's set of matching conditions. Use prefetch to enable the overall behavior for parent pages that contain links to the object. To apply this behavior, you need to match on a filename or fileExtension: CF - https://developers.cloudflare.com/fundamentals/speed/prefetch-urls/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-prefetchable">https://techdocs.akamai.com/property-mgr/reference/latest-prefetchable</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        css
+        js
+        jpg
+        jpeg
+        jp2
+        png
+        gif
+        svg
+        svgz
+        webp
+        eot
+        woff
+        woff2
+        otf
+        ttf
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-13" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Offload origin</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "NO_STORE"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">tieredDistribution:</h3>
+                                <pre>{
+  "name": "tieredDistribution",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-tiered-distribution">https://techdocs.akamai.com/property-mgr/reference/latest-tiered-distribution</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">validateEntityTag:</h3>
+                                <pre>{
+  "name": "validateEntityTag",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-validate-entity-tag">https://techdocs.akamai.com/property-mgr/reference/latest-validate-entity-tag</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">removeVary:</h3>
+                                <pre>{
+  "name": "removeVary",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare does not consider vary values in caching decisions. Nevertheless, vary values are respected when Vary for images is configured and when the vary header is vary: accept-encoding.</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-remove-vary">https://techdocs.akamai.com/property-mgr/reference/latest-remove-vary</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheError:</h3>
+                                <pre>{
+  "name": "cacheError",
+  "options": {
+    "enabled": true,
+    "preserveStale": true,
+    "ttl": "10s"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Caches the origin's error responses to decrease server load. Applies for 10 seconds by default to the following HTTP codes: 204, 305, 400, 404, 405, 501, 502, 503, 504, and 505.
+Cloudflare - Configure cache by status code: https://developers.cloudflare.com/cache/how-to/configure-cache-status-code/. Enabled by default in the baseline.</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-error">https://techdocs.akamai.com/property-mgr/reference/latest-cache-error</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheKeyQueryParams:</h3>
+                                <pre>{
+  "name": "cacheKeyQueryParams",
+  "options": {
+    "behavior": "INCLUDE_ALL_ALPHABETIZE_ORDER"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Cache Keys: https://developers.cloudflare.com/cache/about/cache-keys/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-query-params">https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-query-params</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">prefreshCache:</h3>
+                                <pre>{
+  "name": "prefreshCache",
+  "options": {
+    "enabled": true,
+    "prefreshval": 90
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Existing cache settings should accomplish this - Default CF cache</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-prefresh-cache">https://techdocs.akamai.com/property-mgr/reference/latest-prefresh-cache</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">downstreamCache:</h3>
+                                <pre>{
+  "name": "downstreamCache",
+  "options": {
+    "allowBehavior": "LESSER",
+    "behavior": "ALLOW",
+    "sendHeaders": "CACHE_CONTROL",
+    "sendPrivate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Set Browser Cache TTL: https://developers.cloudflare.com/cache/how-to/set-browser-ttl/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache">https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-14" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">CSS and JavaScript</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "CACHE_CONTROL_AND_EXPIRES",
+    "mustRevalidate": false,
+    "defaultTtl": "0s",
+    "cacheControlDirectives": "",
+    "enhancedRfcSupport": false,
+    "honorPrivate": false,
+    "honorMustRevalidate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        css
+        js
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /__ssobj/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-15" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Fonts</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "CACHE_CONTROL_AND_EXPIRES",
+    "mustRevalidate": false,
+    "defaultTtl": "0s",
+    "cacheControlDirectives": "",
+    "enhancedRfcSupport": false,
+    "honorPrivate": false,
+    "honorMustRevalidate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        eot
+        woff
+        woff2
+        otf
+        ttf
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /__ssobj/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-16" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Images</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "CACHE_CONTROL_AND_EXPIRES",
+    "mustRevalidate": false,
+    "defaultTtl": "0s",
+    "cacheControlDirectives": "",
+    "enhancedRfcSupport": false,
+    "honorPrivate": false,
+    "honorMustRevalidate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        jpg
+        jpeg
+        png
+        gif
+        webp
+        jp2
+        ico
+        svg
+        svgz
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /__ssobj/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-17" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Files</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "CACHE_CONTROL_AND_EXPIRES",
+    "mustRevalidate": false,
+    "defaultTtl": "0s",
+    "cacheControlDirectives": "",
+    "enhancedRfcSupport": false,
+    "honorPrivate": false,
+    "honorMustRevalidate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        pdf
+        doc
+        docx
+        odt
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /__ssobj/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-18" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Other static objects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "CACHE_CONTROL_AND_EXPIRES",
+    "mustRevalidate": false,
+    "defaultTtl": "0s",
+    "cacheControlDirectives": "",
+    "enhancedRfcSupport": false,
+    "honorPrivate": false,
+    "honorMustRevalidate": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        aif
+        aiff
+        au
+        avi
+        bin
+        bmp
+        cab
+        carb
+        cct
+        cdf
+        class
+        dcr
+        dtd
+        exe
+        flv
+        gcf
+        gff
+        grv
+        hdml
+        hqx
+        ini
+        mov
+        mp3
+        nc
+        pct
+        ppc
+        pws
+        swa
+        swf
+        txt
+        vbs
+        w32
+        wav
+        midi
+        wbmp
+        wml
+        wmlc
+        wmls
+        wmlsc
+        xsd
+        zip
+        pict
+        tif
+        tiff
+        mid
+        jxr
+        jar
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /__ssobj/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-19" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">HTML pages</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "NO_STORE"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheKeyQueryParams:</h3>
+                                <pre>{
+  "name": "cacheKeyQueryParams",
+  "options": {
+    "behavior": "IGNORE",
+    "exactMatch": true,
+    "parameters": [
+      "gclid",
+      "fbclid",
+      "utm_source",
+      "utm_campaign",
+      "utm_medium",
+      "utm_content"
+    ]
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Cache Keys: https://developers.cloudflare.com/cache/about/cache-keys/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-query-params">https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-query-params</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: fileExtension
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      values: 
+        html
+        htm
+        php
+        jsp
+        aspx
+        EMPTY_STRING
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-20" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Redirects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheRedirect:</h3>
+                                <pre>{
+  "name": "cacheRedirect",
+  "options": {
+    "enabled": "false"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-redirect">https://techdocs.akamai.com/property-mgr/reference/latest-cache-redirect</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">chaseRedirects:</h3>
+                                <pre>{
+  "name": "chaseRedirects",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-chase-redirects">https://techdocs.akamai.com/property-mgr/reference/latest-chase-redirects</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-21" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">POST responses</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cachePost:</h3>
+                                <pre>{
+  "name": "cachePost",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Workers solution required: https://developers.cloudflare.com/workers/examples/cache-post-request (https://community.cloudflare.com/t/how-to-cache-a-post-request/349408)</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-post">https://techdocs.akamai.com/property-mgr/reference/latest-cache-post</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-22" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">GraphQL</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">graphqlCaching:</h3>
+                                <pre>{
+  "name": "graphqlCaching",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-graphql-caching">https://techdocs.akamai.com/property-mgr/reference/latest-graphql-caching</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: path
+    options: 
+      matchCaseSensitive: false
+      matchOperator: MATCHES_ONE_OF
+      normalize: false
+      values: 
+        /graphql
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-23" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Uncacheable objects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">downstreamCache:</h3>
+                                <pre>{
+  "name": "downstreamCache",
+  "options": {
+    "behavior": "BUST"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Set Browser Cache TTL: https://developers.cloudflare.com/cache/how-to/set-browser-ttl/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache">https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: cacheability
+    options: 
+      matchOperator: IS_NOT
+      value: CACHEABLE
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-24" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Strengthen security</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-25" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Allowed methods</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allHttpInCacheHierarchy:</h3>
+                                <pre>{
+  "name": "allHttpInCacheHierarchy",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Allow all HTTP request methods to be used for the edge's parent servers. Looks to be including all methods in cache. To implement on CF - looks like we'd need a Worker to cover some requests - example: https://developers.cloudflare.com/workers/examples/cache-post-request/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-all-http-in-cache-hierarchy">https://techdocs.akamai.com/property-mgr/reference/latest-all-http-in-cache-hierarchy</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-26" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">POST</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowPost:</h3>
+                                <pre>{
+  "name": "allowPost",
+  "options": {
+    "allowWithoutContentLength": false,
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Alllow Post request. Could use a custom to prevent/alllow different types of requests to different resources - https://developers.cloudflare.com/rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-post">https://techdocs.akamai.com/property-mgr/reference/latest-allow-post</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-27" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">OPTIONS</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowOptions:</h3>
+                                <pre>{
+  "name": "allowOptions",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Alllow Options request. Could use a custom to prevent/alllow different types of requests to different resources - https://developers.cloudflare.com/rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-options">https://techdocs.akamai.com/property-mgr/reference/latest-allow-options</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-28" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">PUT</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowPut:</h3>
+                                <pre>{
+  "name": "allowPut",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Alllow Put request. Could use a custom to prevent/alllow different types of requests to different resources - https://developers.cloudflare.com/rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-put">https://techdocs.akamai.com/property-mgr/reference/latest-allow-put</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-29" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">DELETE</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowDelete:</h3>
+                                <pre>{
+  "name": "allowDelete",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Alllow delete request. Could use a custom to prevent/alllow different types of requests to different resources - https://developers.cloudflare.com/rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-delete">https://techdocs.akamai.com/property-mgr/reference/latest-allow-delete</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-30" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">PATCH</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">allowPatch:</h3>
+                                <pre>{
+  "name": "allowPatch",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Alllow Patch request. Could use a custom to prevent/alllow different types of requests to different resources - https://developers.cloudflare.com/rules/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-allow-patch">https://techdocs.akamai.com/property-mgr/reference/latest-allow-patch</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-31" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Obfuscate debug info</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheTagVisible:</h3>
+                                <pre>{
+  "name": "cacheTagVisible",
+  "options": {
+    "behavior": "PRAGMA_HEADER"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-tag-visible">https://techdocs.akamai.com/property-mgr/reference/latest-cache-tag-visible</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-32" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Obfuscate backend info</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">modifyOutgoingResponseHeader:</h3>
+                                <pre>{
+  "name": "modifyOutgoingResponseHeader",
+  "options": {
+    "action": "DELETE",
+    "customHeaderName": "X-Powered-By",
+    "standardDeleteHeaderName": "OTHER"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Transform Rules: https://developers.cloudflare.com/rules/transform/ - Note: Cloudflare does not consider vary values in caching decisions. Nevertheless, vary values are respected when Vary for images is configured and when the vary header is vary: accept-encoding</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-modify-outgoing-response-header">https://techdocs.akamai.com/property-mgr/reference/latest-modify-outgoing-response-header</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">modifyOutgoingResponseHeader:</h3>
+                                <pre>{
+  "name": "modifyOutgoingResponseHeader",
+  "options": {
+    "action": "DELETE",
+    "customHeaderName": "Server",
+    "standardDeleteHeaderName": "OTHER"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Transform Rules: https://developers.cloudflare.com/rules/transform/ - Note: Cloudflare does not consider vary values in caching decisions. Nevertheless, vary values are respected when Vary for images is configured and when the vary header is vary: accept-encoding</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-modify-outgoing-response-header">https://techdocs.akamai.com/property-mgr/reference/latest-modify-outgoing-response-header</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: requestHeader
+    options: 
+      headerName: X-Akamai-Debug
+      matchCaseSensitiveValue: true
+      matchOperator: IS_NOT_ONE_OF
+      matchWildcardName: false
+      matchWildcardValue: false
+      values: 
+        true
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-33" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">HSTS</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">httpStrictTransportSecurity:</h3>
+                                <pre>{
+  "name": "httpStrictTransportSecurity",
+  "options": {
+    "enable": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-http-strict-transport-security">https://techdocs.akamai.com/property-mgr/reference/latest-http-strict-transport-security</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-34" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Increase availability</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-35" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Simulate failover</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">breakConnection:</h3>
+                                <pre>{
+  "name": "breakConnection",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Part of the Failover configuration. RE: CF Load balancing: https://developers.cloudflare.com/load-balancing/ (fail action is the aciton taken when the parameters are matched - Akamai: https://techdocs.akamai.com/property-mgr/docs/site-failover)</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-break-connection">https://techdocs.akamai.com/property-mgr/reference/latest-break-connection</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: contentDeliveryNetwork
+    options: 
+      matchOperator: IS
+      network: STAGING
+    
+  
+  
+    name: requestHeader
+    options: 
+      headerName: breakconnection
+      matchCaseSensitiveValue: true
+      matchOperator: IS_ONE_OF
+      matchWildcardName: false
+      matchWildcardValue: false
+      values: 
+        Your-Secret-Here
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-36" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Site failover</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">failAction:</h3>
+                                <pre>{
+  "name": "failAction",
+  "options": {
+    "enabled": true,
+    "actionType": "RECREATED_NS",
+    "netStorageHostname": {
+      "downloadDomainName": "tpw.download.akamai.com",
+      "cpCode": 1247748,
+      "g2oToken": null
+    },
+    "netStoragePath": "/sorry_page.html",
+    "cpCode": {
+      "id": 1160712,
+      "description": "www.templeandwebster.com.au",
+      "products": [
+        "Site_Accel"
+      ],
+      "createdDate": 1614825764000,
+      "cpCodeLimits": null,
+      "name": "www.templeandwebster.com.au"
+    },
+    "statusCode": 404
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Load balancing: https://developers.cloudflare.com/load-balancing/ (fail action is the aciton taken when the parameters are matched - Akamai: https://techdocs.akamai.com/property-mgr/docs/site-failover)</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-fail-action">https://techdocs.akamai.com/property-mgr/reference/latest-fail-action</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: originTimeout
+    options: 
+      matchOperator: ORIGIN_TIMED_OUT
+    
+  
+  
+    name: matchResponseCode
+    options: 
+      matchOperator: IS_ONE_OF
+      values: 
+        500
+        501
+        502
+        503
+        504
+        505
+        506
+        507
+        508
+        509
+        510
+        511
+        403
+        408
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-37" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Origin health</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">healthDetection:</h3>
+                                <pre>{
+  "name": "healthDetection",
+  "options": {
+    "maximumReconnects": 3,
+    "retryCount": 3,
+    "retryInterval": "10s"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Monitors the health of your origin server by tracking unsuccessful attempts to contact it. Use this behavior to keep end users from having to wait several seconds before a forwarded request times out, or to reduce requests on the origin server when it is unavailable.
+
+Cloudflare equivalent here would likely be LB monitors: https://developers.cloudflare.com/load-balancing/understand-basics/monitors/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-health-detection">https://techdocs.akamai.com/property-mgr/reference/latest-health-detection</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-38" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Minimize payload</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                    <div id="rule-child-39" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Compressible objects</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">gzipResponse:</h3>
+                                <pre>{
+  "name": "gzipResponse",
+  "options": {
+    "behavior": "ALWAYS"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare automatically adds Gzip and Brotli. In addition to Cloudflareâs CDN caching static content and  auto-minification of CSS, JS & HTML to speed up your site, Cloudflare also provides gzip and brotli compression to help site owners. If you do not want a particular response from your origin to be encoded, you can disable this by setting cache-control: no-transform at your origin web server: https://developers.cloudflare.com/support/speed/optimization-file-size/what-will-cloudflare-compress/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-gzip-response">https://techdocs.akamai.com/property-mgr/reference/latest-gzip-response</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: contentType
+    options: 
+      matchCaseSensitive: false
+      matchOperator: IS_ONE_OF
+      matchWildcard: true
+      values: 
+        application/*javascript*
+        application/*json*
+        application/*xml*
+        application/text*
+        application/vnd-ms-fontobject
+        application/vnd.microsoft.icon
+        application/x-font-opentype
+        application/x-font-truetype
+        application/x-font-ttf
+        application/xmlfont/eot
+        font/eot
+        font/opentype
+        font/otf
+        image/svg+xml
+        image/vnd.microsoft.icon
+        image/x-icon
+        text/*
+        application/octet-stream*
+        application/x-font-eot*
+        font/ttf
+        application/font-ttf
+        application/font-sfnt
+        application/x-tgif
+      
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-40" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Bot Caching</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">setVariable:</h3>
+                                <pre>{
+  "name": "setVariable",
+  "options": {
+    "variableName": "PMUSER_ISMOBILE",
+    "valueSource": "EXTRACT",
+    "transform": "NONE",
+    "extractLocation": "DEVICE_PROFILE",
+    "deviceProfile": "IS_MOBILE"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF - this indicates the presence of custom logic. It may be possible to implement this within a rule (ruleset engine), but more often than not, requires custom logic via Workers: https://developers.cloudflare.com/workers/
+This would need to be scoped to determine what is required.   </pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-set-variable">https://techdocs.akamai.com/property-mgr/reference/latest-set-variable</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">caching:</h3>
+                                <pre>{
+  "name": "caching",
+  "options": {
+    "behavior": "MAX_AGE",
+    "mustRevalidate": false,
+    "ttl": "1d"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Akamai: Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache. Note that any NO_STORE or BYPASS_CACHE HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the Learn about caching section in the guide. 
+
+CF breead and butter: https://developers.cloudflare.com/cache/ - add in cache rules also if required: https://developers.cloudflare.com/cache/about/cache-rules/ - Cloudflare Cache (CDN) docs</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-caching">https://techdocs.akamai.com/property-mgr/reference/latest-caching</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">tieredDistribution:</h3>
+                                <pre>{
+  "name": "tieredDistribution",
+  "options": {
+    "enabled": true
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-tiered-distribution">https://techdocs.akamai.com/property-mgr/reference/latest-tiered-distribution</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheRedirect:</h3>
+                                <pre>{
+  "name": "cacheRedirect",
+  "options": {
+    "enabled": "false"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-redirect">https://techdocs.akamai.com/property-mgr/reference/latest-cache-redirect</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">chaseRedirects:</h3>
+                                <pre>{
+  "name": "chaseRedirects",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-chase-redirects">https://techdocs.akamai.com/property-mgr/reference/latest-chase-redirects</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">prefreshCache:</h3>
+                                <pre>{
+  "name": "prefreshCache",
+  "options": {
+    "enabled": true,
+    "prefreshval": 90
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Existing cache settings should accomplish this - Default CF cache</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-prefresh-cache">https://techdocs.akamai.com/property-mgr/reference/latest-prefresh-cache</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheKeyIgnoreCase:</h3>
+                                <pre>{
+  "name": "cacheKeyIgnoreCase",
+  "options": {
+    "enabled": false
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-ignore-case">https://techdocs.akamai.com/property-mgr/reference/latest-cache-key-ignore-case</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">downstreamCache:</h3>
+                                <pre>{
+  "name": "downstreamCache",
+  "options": {
+    "behavior": "TUNNEL_ORIGIN"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>CF Set Browser Cache TTL: https://developers.cloudflare.com/cache/how-to/set-browser-ttl/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache">https://techdocs.akamai.com/property-mgr/reference/latest-downstream-cache</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheId:</h3>
+                                <pre>{
+  "name": "cacheId",
+  "options": {
+    "rule": "INCLUDE_VARIABLE",
+    "variableName": "PMUSER_ISMOBILE"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Cache Keys: https://developers.cloudflare.com/cache/about/cache-keys/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-id">https://techdocs.akamai.com/property-mgr/reference/latest-cache-id</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">cacheId:</h3>
+                                <pre>{
+  "name": "cacheId",
+  "options": {
+    "rule": "EXCLUDE_QUERY_PARAMS",
+    "optional": true,
+    "elements": [
+      "gclid",
+      "fbclid",
+      "utm_source",
+      "utm_campaign",
+      "utm_medium",
+      "utm_content",
+      "refid",
+      "device",
+      "ptid",
+      "utm*",
+      "refer*"
+    ]
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre>Cloudflare Cache Keys: https://developers.cloudflare.com/cache/about/cache-keys/</pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-cache-id">https://techdocs.akamai.com/property-mgr/reference/latest-cache-id</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4">
+  
+    name: userAgent
+    options: 
+      matchOperator: IS_ONE_OF
+      values: 
+        *bot*
+        *yandex*
+        *baidu*
+        *slurp*
+        *bingpreview*
+        *duckduckbot*
+      
+      matchWildcard: true
+      matchCaseSensitive: false
+    
+  
+  
+    name: hostname
+    options: 
+      matchOperator: IS_ONE_OF
+      values: 
+        www.templeandwebster.com.au
+      
+    
+  
+  
+    name: path
+    options: 
+      matchOperator: DOES_NOT_MATCH_ONE_OF
+      values: 
+        /a/*
+        /ajax/*
+        /v/*
+        /session/*
+        /*/secure/*
+      
+      matchCaseSensitive: false
+      normalize: false
+    
+  
+  
+    name: userAgent
+    options: 
+      matchOperator: IS_NOT_ONE_OF
+      values: 
+        *site24x7*
+      
+      matchWildcard: true
+      matchCaseSensitive: false
+    
+  
+</pre>
+            </div>
+                    <div id="rule-child-41" class="rule-child hidden">
+                        <h2 class="text-xl font-bold mb-4">Invalidation at 1 am</h2>
+                        <h3 class="text-lg font-bold mb-2">Behaviors:</h3>
+            
+                        <div class="flex mb-4">
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">scheduleInvalidation:</h3>
+                                <pre>{
+  "name": "scheduleInvalidation",
+  "options": {
+    "start": "2021/03/13 01:00:00 timezone=Australia/Sydney",
+    "repeat": true,
+    "refreshMethod": "PURGE",
+    "repeatInterval": "1d"
+  }
+}</pre>
+                            </div>
+                            <div class="w-1/2 border p-4">
+                                <h3 class="text-lg font-bold mb-2">Cloudflare Equivalent:</h3>
+                                <pre></pre>
+                                <a href="https://techdocs.akamai.com/property-mgr/reference/latest-schedule-invalidation">https://techdocs.akamai.com/property-mgr/reference/latest-schedule-invalidation</a>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2">Criteria:</h3>
+                        <pre class="border p-4 mb-4"></pre>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function displayRuleChild(idx) {
+            var ruleChildElements = document.getElementsByClassName('rule-child');
+            for (var i = 0; i < ruleChildElements.length; i++) {
+                ruleChildElements[i].classList.add('hidden');
+                document.getElementById('nav-item-' + i).classList.remove('bg-gray-300');
+            }
+            var ruleChildElement = document.getElementById('rule-child-' + idx);
+            ruleChildElement.classList.remove('hidden');
+
+            var navItemElement = document.getElementById('nav-item-' + idx);
+            navItemElement.classList.add('bg-gray-300');
+        }
+    </script>
+</body>
+</html>
+        
