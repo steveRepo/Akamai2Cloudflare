@@ -7,7 +7,7 @@ The script creates a HTML page which details the JSON in an easy to read format 
 
 The script requires an Akamai Property Manager JSON export. You should have this file present in the same directory and titled: akamai_export.json.
 
-* Update: This script now pulls down this Google sheets file as the Source CSV for mapping: <Cloudflare Property>
+* Update: This script now pulls down this Google sheets file as the Source CSV for mapping: {Cloudflare Property}
 
 Stylings will be added in the next update.
 
